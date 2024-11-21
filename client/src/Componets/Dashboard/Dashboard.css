@@ -1,0 +1,371 @@
+/* Imported Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+/* Variables */
+:root {
+    --primary-color: #0170B9;
+    --secondary-color: #f5f5f5;
+    --font-color: #333;
+    --light-gray: #e5e5e5;
+    --white-color: #ffffff;
+    --hover-color: #014a75;
+    --error-color: #ff4d4d;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px 20px; /* Reduced padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 30px; /* Smaller logo */
+    margin-right: 10px; /* Adjusted margin */
+}
+
+.navButtons {
+    display: flex;
+    gap: 15px; /* Reduced gap */
+}
+
+.navButton,
+.logoutButton {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 8px 16px; /* Reduced padding */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px; /* Smaller font */
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.navButton:hover,
+.logoutButton:hover {
+    background-color: var(--hover-color);
+    color: var(--white-color);
+    transform: translateY(-2px); /* Slightly smaller hover effect */
+}
+
+/* Dropdown Menu */
+.dropdownToggle {
+    background: none;
+    color: var(--white-color);
+    border: none;
+    font-size: 26px; /* Increased size for easier touch interaction */
+    cursor: pointer;
+}
+
+.dropdownMenu {
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background-color: var(--white-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    width: auto; /* Flexible width for larger screens */
+    max-width: 250px; /* Set max width */
+}
+
+.dropdownItem {
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdownItem:hover {
+    background-color: var(--light-gray);
+    color: var(--white-color);
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: auto;
+    display: block;
+    padding: 5px 10px;
+}
+
+/* Dashboard Page Layout */
+.dashboardPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Search Form Styling */
+.searchForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+.searchForm input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.searchForm input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+.searchForm button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+    font-size: 14px;
+}
+
+.searchForm button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-3px);
+}
+
+/* Phone Details Card */
+.phoneDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.phoneCard {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    width: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Phone card title (phone name) handling */
+.phoneCard h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;  /* Prevent the text from wrapping onto multiple lines */
+    overflow: hidden;     /* Hide the overflow text */
+    text-overflow: ellipsis; /* Display '...' for overflowed text */
+    width: 100%;          /* Ensure it takes up the full width of the card */
+    display: block;
+    max-width: 100%;      /* Make sure the name doesn't stretch out of bounds */
+}
+
+/* If you prefer the name to wrap */
+.phoneCard h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    word-wrap: break-word;  /* Allow long words to break and wrap into the next line */
+    line-height: 1.4;       /* Adjust line-height for better readability */
+    word-break: break-word; /* Make sure long words break appropriately */
+}
+
+.phoneCard:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.phoneCard.flaggedPhone {
+    background-color: #ffe6e6;  /* Light red for flagged phones */
+    border: 2px solid var(--error-color);
+}
+
+.flagged-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: var(--error-color);
+    z-index: 1;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.flagged-icon i:hover {
+    transform: scale(1.2);
+    color: darkred;
+}
+
+/* Action Buttons */
+.actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.actions button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.actions button:first-of-type {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.actions button:last-of-type {
+    background-color: var(--error-color); /* Red for delete */
+    color: var(--white-color);
+}
+
+.actions button:hover {
+    transform: translateY(-3px);
+}
+
+.actions button:first-of-type:hover {
+    background-color: var(--hover-color);
+}
+
+.actions button:last-of-type:hover {
+    background-color: #d32f2f;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.paginationButton {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 14px;
+}
+
+.paginationButton:hover:not(:disabled) {
+    background-color: var(--hover-color);
+    transform: translateY(-3px);
+}
+
+.paginationButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.paginationInfo {
+    color: var(--font-color);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Error Message Styles */
+.error-message {
+    color: var(--error-color);
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Footer Styling */
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    color: var(--font-color);
+    font-size: 14px;
+    padding: 20px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px; /* Smaller padding for mobile */
+    }
+
+    .logo {
+        width: 30px;
+    }
+
+    .navButtons {
+        display: none; /* Hide nav buttons for mobile */
+    }
+
+    .dropdownToggle {
+        display: block; /* Show hamburger menu */
+    }
+
+    .dropdownMenu {
+        top: 50px;
+        width: 100%;
+        left: 0;
+    }
+
+    .dropdownItem {
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+}

@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --primary-color: #0170B9;
+    --secondary-color: #333;
+    --background-color: #f9f9f9;
+    --white: #FFFFFF;
+    --gray-light: #EFEFEF;
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
+    --font-small: 14px;
+    --font-medium: 18px;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+}
+
+/* Page Layout */
+.registrationPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-large);
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-medium);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--spacing-large);
+    position: relative;
+}
+
+.logo-container {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.logo-container h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.navButtons {
+    display: flex;
+    gap: var(--spacing-small);
+}
+
+.navButton,
+.logoutButton,
+.dropdownToggle {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: var(--font-medium);
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.logoutButton {
+    color: var(--primary-color);
+}
+
+.navButton:hover,
+.logoutButton:hover,
+.dropdownToggle:hover {
+    color: var(--primary-color);
+}
+
+.dropdownToggle {
+    display: none; /* Hidden on desktop */
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdownMenu {
+    position: absolute;
+    top: 2%;
+    right: 7px;
+    background: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: inline-grid;
+    flex-direction: column;
+    width: 376px;
+    height: 323%;
+}
+
+.dropdownItem,
+.closeButton {
+    padding: var(--spacing-small) var(--spacing-medium);
+    font-size: var(--font-small);
+    color: var(--secondary-color);
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdownItem:hover {
+    background-color: var(--gray-light);
+}
+
+.closeButton {
+    color: var(--primary-color);
+    text-align: right;
+}
+
+/* Form Styles */
+.registrationForm {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--white);
+    padding: var(--spacing-large);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: var(--spacing-large);
+}
+
+.registrationForm h2 {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: var(--spacing-medium);
+}
+
+.registrationForm input,
+.registrationForm button {
+    width: 100%;
+    padding: var(--spacing-small) var(--spacing-medium);
+    margin-bottom: var(--spacing-small);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: var(--font-small);
+}
+
+.registrationForm button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.registrationForm button:hover {
+    background-color: #015a96;
+}
+
+/* Footer */
+.footer {
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    font-size: var(--font-small);
+    position: relative;
+    bottom: auto;
+   
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .dropdownToggle {
+        display: block; /* Show dropdown toggle on mobile */
+    }
+
+    .navButtons {
+        display: none; /* Hide nav buttons on mobile */
+    }
+
+    .navbar {
+        flex-direction: initial;
+        align-items: flex-start;
+    }
+
+    .dropdownMenu {
+        display: flex;
+        right: 0;
+        width: 349px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 8px 0;
+        bottom: auto;
+    }
+}

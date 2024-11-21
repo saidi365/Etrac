@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --primary-color: #0170B9;
+    --secondary-color: #333;
+    --background-color: #f9f9f9;
+    --white: #FFFFFF;
+    --gray-light: #EFEFEF;
+    --gray-dark: #B0B0B0;
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
+    --font-small: 14px;
+    --font-medium: 18px;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+}
+
+/* Page Layout */
+.changeOwnershipPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-large);
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-medium);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--spacing-large);
+    position: relative;
+}
+
+.logo-container {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.logo-container h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Form Styles */
+.changeOwnershipForm {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--white);
+    padding: var(--spacing-large);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: var(--spacing-large);
+}
+
+.changeOwnershipForm h2 {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: var(--spacing-medium);
+}
+
+/* Modern Input Styles */
+.changeOwnershipForm input[type="email"],
+.changeOwnershipForm input[type="text"],
+.changeOwnershipForm input[type="date"],
+.changeOwnershipForm input[type="tel"] {
+    width: 100%;
+    padding: var(--spacing-small) var(--spacing-medium);
+    margin-bottom: var(--spacing-small);
+    border: 2px solid var(--gray-dark);
+    border-radius: 5px;
+    font-size: var(--font-small);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.changeOwnershipForm input[type="email"]:focus,
+.changeOwnershipForm input[type="text"]:focus,
+.changeOwnershipForm input[type="date"]:focus,
+.changeOwnershipForm input[type="tel"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(1, 112, 185, 0.5);
+    outline: none; /* Remove default outline */
+}
+
+/* Modern Button Style */
+.changeOwnershipForm button {
+    width: 100%;
+    padding: var(--spacing-small) var(--spacing-medium);
+    margin-top: var(--spacing-small);
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: var(--font-small);
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.changeOwnershipForm button:disabled {
+    background-color: var(--gray-dark);
+    cursor: not-allowed;
+}
+
+.changeOwnershipForm button:hover:not(:disabled) {
+    background-color: darken(var(--primary-color), 10%);
+    transform: scale(1.02); /* Slightly increase size on hover */
+}
+
+/* Footer Styles */
+.footer {
+    margin-top: auto;
+    padding: var(--spacing-medium);
+    background-color: var(--gray-light);
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navButtons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navButton,
+    .logoutButton {
+        margin-bottom: var(--spacing-small);
+    }
+
+    .logo-container h1 {
+        font-size: 1.2rem;
+    }
+}
